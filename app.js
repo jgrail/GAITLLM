@@ -25,17 +25,15 @@ async function sendMessage(prompt) {
   loading.classList.remove('hidden');
 
   try {
-    const response = await 
-fetch('https://lively-dune-054102f0f.2.azurestaticapps.net', {
-  method: 'POST',
-  credentials: 'include',
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  },
-  body: JSON.stringify({ prompt })
-});
-
+    const response = await fetch('https://weathergenai-h2dtc6e5fwbhe7bu.eastus2-01.azurewebsites.net/ask-agent', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include', // 🔑 This sends the session cookie
+      body: JSON.stringify({ prompt })
+    });
 
     const data = await response.json();
     session.push({ role: 'bot', content: data.response || 'No response received.' });
