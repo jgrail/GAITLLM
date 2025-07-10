@@ -25,7 +25,7 @@ async function sendMessage(prompt) {
   loading.classList.remove('hidden');
 
   try {
-    const response = await fetch('https://weathergenai-h2dtc6e5fwbhe7bu.eastus2-01.azurewebsites.net/ask-agent', {
+    const response = await fetch('https://mychatapp.azurefd.net/api/ask-agent', {
       method: 'POST',
       headers: {
         'accept': 'application/json',
