@@ -26,7 +26,7 @@ async function sendMessage(prompt) {
 
   try {
     const response = await 
-fetch('https://mychatapp.azurefd.net/api/ask-agent', {
+fetch('https://lively-dune-054102f0f.2.azurestaticapps.net', {
   method: 'POST',
   credentials: 'include',
   headers: {
